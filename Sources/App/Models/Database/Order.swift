@@ -6,19 +6,22 @@ final class Order: Model, Content {
     
     @ID(key: "id")
     var id: Int?
-
+    
     @Field(key: "totalAmount")
     var totalAmount: Int
-
+    
     @Field(key: "paidAmount")
     var paidAmount: Int
-
+    
+//    @Field(key: "taxAmount")
+//    var taxAmount: Int
+    
     @Field(key: "userId")
     var userId: Int
-
+    
     @Field(key: "status")
     var status: Int
-
+    
     @Timestamp(key: "createdAt", on: .create)
     var createdAt: Date?
     
@@ -45,7 +48,8 @@ final class Order: Model, Content {
     
     @Children(for: \OrderItem.$order)
     var items: [OrderItem]
-
+    
+    
     init() { }
     
     init(
